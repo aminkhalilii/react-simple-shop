@@ -6,6 +6,9 @@ import { ShopContext } from "../contexts/ShopContext";
 
 const Nav = () => {
 	const {cart} = useContext(ShopContext)
+	const itemCount = cart.reduce((prev,current)=>{
+		return prev + current.count
+	},0)
 	return (
 		<div className="navbar bg-base-100 shadow-md">
 			<div className="flex-1">
@@ -21,7 +24,7 @@ const Nav = () => {
 					<div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
 						<div className="indicator">
 							<FontAwesomeIcon icon={faShoppingCart} className="h-5 w-5" />
-							<span className="badge badge-sm indicator-item">{cart?.length}</span>
+							<span className="badge badge-sm indicator-item">{itemCount}</span>
 						</div>
 					</div>
 					<div
