@@ -5,7 +5,6 @@ import Product from "../components/Product"
 
 const Cart = () => {
 	const {cart} = useContext(ShopContext);
-	console.log(cart);
 	
 	return <div>
 		<h1 className="text-center text-3xl my-5">Your Cart Items</h1>

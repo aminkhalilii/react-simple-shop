@@ -25,9 +25,9 @@ const Product = ({ product }) => {
 						+
 					</button>
 					<span className="mx-2 mt-1">
-						{cart.find((item) => item.id === product.id)?.count || 0}
+						{cart?.find((item) => item.id === product.id)?.count || 0}
 					</span>
-					{cart.find((item) => item.id === product.id)?.count > 0 && (
+					{cart?.find((item) => item.id === product.id)?.count > 0 && (
 						<button
 							onClick={() => {
 								removeFromCart(product.id);
